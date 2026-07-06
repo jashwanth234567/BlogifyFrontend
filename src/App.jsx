@@ -2,12 +2,20 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
+import Profile from "./pages/Profile";
+import Trending from "./pages/Trending";
+import MostLiked from "./pages/MostLiked";
+import MostViewed from "./pages/MostViewed";
+import NotificationsPage from "./pages/Notifications";
 import Layout from "./pages/author/Layout";
 import Dashboard from "./pages/author/Dashboard";
 import AddBlog from "./pages/author/AddBlog";
 import ListBlog from "./pages/author/ListBlog";
 import Comments from "./pages/author/Comments";
-import Login from "./components/author/Login";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+import UserDashboard from "./pages/Dashboard";
 import ReturnInfo from "./pages/ReturnInfo";
 import RefundPolicy from "./pages/RefundPolicy";
 import ActivityLogs from "./pages/author/ActivityLogs";
@@ -39,8 +47,18 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/blog/:id" element={<Blog />} />
+                <Route path="/profile/:username" element={<Profile />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/trending" element={<Trending />} />
+                <Route path="/most-liked" element={<MostLiked />} />
+                <Route path="/most-viewed" element={<MostViewed />} />
+                <Route path="/notifications" element={<NotificationsPage />} />
                 <Route path="/return-info" element={<ReturnInfo />} />
                 <Route path="/refund-policy" element={<RefundPolicy />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/dashboard" element={<UserDashboard />} />
                 <Route path="/author" element={token ? <Layout /> : <Login />}>
                     <Route index element={<Dashboard />} />
                     <Route path="add-blog" element={<AddBlog />} />
